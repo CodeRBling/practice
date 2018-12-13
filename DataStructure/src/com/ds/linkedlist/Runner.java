@@ -28,6 +28,19 @@ public class Runner {
 		list.traverse();
 		list.deleteTailNode();
 		list.traverse();
+		list.deleteByKey(2);
+		list.traverse();
+		System.out.println("--------------------------Lenght of linked list---------------------");
+		list = new LinkedList();
+		list.addAtHead(new Node(1));
+		list.addAtHead(new Node(2));
+		list.addAtHead(new Node(3));
+		list.addAtHead(new Node(4));
+		list.addAtHead(new Node(5));
+		System.out.println("lenght by iteration:"+list.length());
+		list.traverse();
+		System.out.println("lenght by recursion:"+list.lengthR(list.head));
+		list.traverse();
 	}
 
 }

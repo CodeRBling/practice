@@ -23,11 +23,9 @@ public class LinkedList {
 		if (this.head == null) {
 			setHead(node);
 		} else {
-			int i = 0;
 			Node head = this.head;
 			while (head.next != null) {
 				head = head.next;
-				i++;
 			}
 			head.next = node;
 		}
@@ -102,6 +100,47 @@ public class LinkedList {
 	 * @param key
 	 */
 	public void deleteByKey(int key){
-		
+		if(this.head==null){
+			System.out.println("deletion not possible");
+		}else if(this.head.data==key){
+			this.head = this.head.next;
+		}else{
+			Node prev = this.head;
+			Node next = this.head.next;
+			while(next.data!=key){
+				next = next.next;
+				prev = prev.next;
+			}
+			prev.next = next.next;
+			next = null;
+		}
+	}
+	
+	/**
+	 * Find length of linked list Iterative approach
+	 */
+	public int length(){
+		if(this.head==null){
+			return 0;
+		}else{
+			Node head = this.head;
+			int len = 0;
+			while (head != null) {
+				head = head.next;
+				len++;
+			}
+			return len;
+		}
+	}
+	
+	/**
+	 * Get length by recursion
+	 */
+	public int lengthR(Node node){
+		if(node==null){
+			return 0;
+		}else{
+			return lengthR(node.next)+1;
+		}
 	}
 }
