@@ -41,6 +41,37 @@ public class Runner {
 		list.traverse();
 		System.out.println("lenght by recursion:"+list.lengthR(list.head));
 		list.traverse();
+		System.out.println("--------------------------Nth Node from last---------------------");
+		list.traverse();
+		list.getNthNodeFromlast(3, list.head);
+		list.getNthNodeFromlast(4, list.head);
+		list.getNthNodeFromlast(6, list.head);
+		System.out.println("--------------------------loop in linked list---------------------");
+		list.detectLoop();
+		Node loopnode = new Node(6);
+		loopnode.next = list.head;
+		list.add(loopnode);
+		list.detectLoop();
+		//creating loop of two
+		list = new LinkedList();
+		list.add(new Node(1));
+		Node on = new Node(2);
+		on.next = list.head;
+		list.add(on);
+		list.detectLoop();
+		//creating loop in middle
+		list = new LinkedList();
+		list.add(new Node(1));
+		list.add(new Node(2));
+		Node on1 = new Node(3);
+		list.add(on1);
+		
+		list.add(new Node(4));
+		list.add(new Node(5));
+		Node on2 = new Node(6);
+		on2.next = on1;
+		list.add(on2);
+		list.detectLoop();
 	}
 
 }

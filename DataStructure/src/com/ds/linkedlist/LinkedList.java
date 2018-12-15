@@ -143,4 +143,56 @@ public class LinkedList {
 			return lengthR(node.next)+1;
 		}
 	}
+	
+	/**
+	 * Prints data of nth node from last recursive approach
+	 * @param n
+	 */
+	public int getNthNodeFromlast(int n,Node node){
+		  if(node==null)
+			  return 0;
+		  else{
+			  int spot = getNthNodeFromlast(n,node.next)+1;
+			  if(spot==n){
+				  System.out.println("data: "+node.data);
+			  }
+			  return spot;
+		  }
+	}
+	
+	/**
+	 * find loop in linked list my idea 
+	 * After further reading floyd cycle detection algo which take 2 pointer move 1-pointer by one step other by 2-step 
+	 * length can be found by incrementing counter till starting and end are equal
+	 */
+	public void detectLoop(){
+		if(this.head==null){
+			System.out.println("List is empty");
+		}else if(this.head.next ==null){
+			System.out.println("No loop");
+		}else{
+			Node prev = this.head;
+			Node next = this.head.next;
+			int i=1;
+			while(prev!=next){
+				for(int j=1;j<=i;j++){
+					if(next.next==null){
+						System.out.println("No loop");
+						return;
+					}else{
+						next = next.next;
+					}
+				}
+				if(prev==next){
+					System.out.println("Loop of size :"+(i+1)+" exist");
+					return;
+				}
+				for(int j=1;j<=i;j++){
+					prev = prev.next;
+				}
+				i++;
+			}
+			
+		}
+	}
 }
