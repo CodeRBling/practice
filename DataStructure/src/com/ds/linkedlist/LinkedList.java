@@ -1,5 +1,7 @@
 package com.ds.linkedlist;
 
+import java.util.ArrayList;
+
 public class LinkedList {
 	Node head;
 
@@ -193,6 +195,64 @@ public class LinkedList {
 				i++;
 			}
 			
+		}
+	}
+	
+	/**
+	 * 
+	 * @param a
+	 * @param b
+	 */
+	public void swap(int a,int b){
+		//making sure list is not empty and atleast 2 nodes are there
+		if(a!=b && this.head!=null && this.head.next!=null){
+			//push fake node at start 
+			Node fake = new Node(0);
+			fake.next = this.head;
+			this.head = fake;
+			boolean flag1 = true;
+			boolean flag2 = true;
+			Node swap1 = null;
+			Node swap2 = null;
+			//find previous nodes 
+			while(fake.next!=null){
+				if(flag1 && a==fake.next.data){
+					if(swap1==null){
+						swap1 = fake;
+					}else{
+						swap2 = fake;
+					}
+				}
+				if(flag2 && b==fake.next.data){
+					if(swap1==null){
+						swap1 = fake;
+					}else{
+						swap2 = fake;
+					}
+				}
+				fake = fake.next;
+			}
+			//if nodes found 
+			if(swap1!=null&&swap2!=null){
+				Node n1 = swap1.next;
+				Node n2 = swap2.next;
+				if(n1.equals(swap2)){
+					swap2.next = n2.next;
+					n2.next = n1;
+					swap1.next = n2;
+				}else{
+					swap1.next = n1.next;
+					swap2.next = n2.next;
+					n2.next = n1.next;
+					n1.next = swap2.next;
+					swap1.next = n2;
+					swap2.next = n1;
+				}
+				System.out.println("Swapping comlete");
+			}else{
+				System.out.println("Node not found");
+			}
+			this.head = this.head.next;
 		}
 	}
 }

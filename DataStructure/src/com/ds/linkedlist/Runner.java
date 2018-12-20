@@ -65,13 +65,22 @@ public class Runner {
 		list.add(new Node(2));
 		Node on1 = new Node(3);
 		list.add(on1);
-		
 		list.add(new Node(4));
 		list.add(new Node(5));
 		Node on2 = new Node(6);
 		on2.next = on1;
 		list.add(on2);
 		list.detectLoop();
+		System.out.println("--------------------------swapping in linked list---------------------");
+		list = new LinkedList();
+		list.addAtHead(new Node(1));
+		list.addAtHead(new Node(2));
+		list.addAtHead(new Node(3));
+		list.addAtHead(new Node(4));
+		list.addAtHead(new Node(5));
+		list.swap(4, 3);
+		list.traverse();
+		list.swap(1, 6);
 	}
 
 }
