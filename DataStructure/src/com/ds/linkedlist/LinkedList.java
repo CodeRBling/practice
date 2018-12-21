@@ -255,4 +255,26 @@ public class LinkedList {
 			this.head = this.head.next;
 		}
 	}
+	
+	/**
+	 * Method to reverse the linked list
+	 */
+	public void reverseList(){
+		Node reverseHead = null;
+		if(this.head!=null && this.head.next!=null){
+			Node temp = this.head;
+			while(temp!=null){
+				if(reverseHead==null){
+					reverseHead = new Node(temp.data);
+					reverseHead.next = null;
+				}else{
+					Node newNode = new Node(temp.data);
+					newNode.next = reverseHead;
+					reverseHead = newNode;
+				}
+				temp = temp.next;
+			}
+			this.head = reverseHead;
+		}
+	}
 }

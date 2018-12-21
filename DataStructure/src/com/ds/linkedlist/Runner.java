@@ -81,6 +81,23 @@ public class Runner {
 		list.swap(4, 3);
 		list.traverse();
 		list.swap(1, 6);
+		System.out.println("--------------------------reversing  linked list---------------------");
+		list = new LinkedList();
+		list.addAtHead(new Node(1));
+		list.addAtHead(new Node(2));
+		list.addAtHead(new Node(3));
+		list.addAtHead(new Node(4));
+		list.addAtHead(new Node(5));
+		list.traverse();
+		list.reverseList();
+		list.traverse();
+		list = new LinkedList();
+		list.addAtHead(new Node(1));
+		list.addAtHead(new Node(2));
+		list.traverse();
+		list.reverseList();
+		list.traverse();
+		
 	}
 
 }
