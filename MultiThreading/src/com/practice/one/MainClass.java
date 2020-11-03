@@ -7,7 +7,7 @@ package com.practice.one;
  * 	c.Using Functional interface/lambda expression
  * 2 - Starting Thread
  * 3 - Waiting for Thread to complete execution 
- * @author abhishs17
+ * @author CodeRBling
  *
  */
 public class MainClass {
