@@ -4,7 +4,3 @@
     <p align="center">Algorithm and data structure<br>Leetcode and Hackerrank solutions.</p>
     <br><br><br>
 </p>
-<b>This is new change<b>
-<p>This is second change</p
-<p>This is third change</p>
-<p>This is Forth Change</p>
